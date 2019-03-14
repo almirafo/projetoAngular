@@ -7,7 +7,7 @@ import { Eps } from '../model/eps.model';
 @Injectable()
 export class EpsService {
 
-  private apiPath = 'api/epss';
+  private apiPath = 'api/epsis';
   constructor( private http: HttpClient) { }
 
   create(eps: Eps): Observable<Eps> {
@@ -19,6 +19,7 @@ export class EpsService {
   }
 
   list(): Observable<Eps[]> {
+    console.log('fazendo list');
     return this.http.get(this.apiPath).pipe(
       catchError(this.handleError),
       map(this.jsonDataToEPSs)
@@ -41,7 +42,7 @@ export class EpsService {
 
   }
   private handleError(error: any): Observable<any> {
-    console.log("Erro=>", error);
+    console.log('Erro=>', error);
     return throwError(error);
 
 

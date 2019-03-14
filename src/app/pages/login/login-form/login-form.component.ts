@@ -36,7 +36,7 @@ export class LoginFormComponent implements OnInit, AfterContentChecked {
 
   ngOnInit() {
 
-    this.setCurrentAction();
+
     this.buidLoginForm();
 
   }
@@ -45,15 +45,30 @@ export class LoginFormComponent implements OnInit, AfterContentChecked {
 
   }
 
-  //privates methods
-  private setCurrentAction() { }
+ // privates methods
+
 
   private login() {
     this.submittingForm = true;
     const user: User = Object.assign(  new User('', '', '', ''), this.loginForm.value );
     this.userService.getById(user.id)
       .subscribe(
-        ( userAuthentication: User ) => this.actionsForSuccess(userAuthentication)
+        ( userAuthentication: User ) => {if (user.password === this.loginForm.value.password) {
+          toastr.success('logado com sucesso');
+
+          this.shared.user = userAuthentication;
+          this.shared.showTemplate.emit(true);
+          this.router.navigate(['']);
+
+
+          this.formSubmitAttempt = true;
+          return true;
+
+        } else {
+          toastr.error ('erro ao logar');
+          this.submittingForm = false;
+          return false;
+        }}
         ,
         error => this.actionsForError(error)
       );

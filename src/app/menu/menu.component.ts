@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   public shared: SharedService;
-
+  showTemplate = false;
   title = 'TCS - Transferência de Arquivos de CRM';
   userName: string;
   constructor(private router: Router) {
@@ -19,6 +19,13 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.shared.showTemplate.subscribe(
+      show => { this.showTemplate = show;
+                if (this.showTemplate) {
+                  this.userName = this.shared.user.id;
+                }
+               }
+    );
 
   }
 

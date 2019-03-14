@@ -4,7 +4,8 @@ export class Eps {
         nomeEmpresa?: string,
         nomeContato?: string,
         telefoneContato?: string,
-        emailContato?: string
+        emailContato?: string,
+        usuarioUltAlter?: string
 
     ) {}
 }

@@ -1,14 +1,15 @@
+import { AuthGuard } from './../../guards/auth.guard';
 import { EpsListComponent } from './eps-list/eps-list.component';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { NgModule, Component } from '@angular/core';
 import { EpsFormComponent } from './eps-form/eps-form.component';
-import { AuthGuard } from '../../guards/auth.guard';
+
 
 
 const routes: Routes = [
-  {path: '', component: EpsListComponent, canActivateChild: [AuthGuard]},
-  {path: 'new', component: EpsFormComponent, canActivateChild: [AuthGuard]},
-  {path: ':id/edit', component: EpsFormComponent, canActivateChild: [AuthGuard]},
+  {path: '', component: EpsListComponent, canActivate: [ AuthGuard ]},
+  {path: 'new', component: EpsFormComponent, canActivate: [ AuthGuard ]},
+  {path: ':id/edit', component: EpsFormComponent, canActivate: [ AuthGuard ]},
 
 ];
 

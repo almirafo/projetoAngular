@@ -6,7 +6,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item active">Empresas Parceiras Santander</li>
-          <a class="btn btn-primary ml-auto" href='eps/new'>Adicionar</a>
+          <a class="btn btn-primary ml-auto" routerLink='/eps/new'>Adicionar</a>
         </ol>
       </div>
     </form>
@@ -16,27 +16,19 @@
 
 
         <p-column field="codigo" header="Código" [style]="{'width':'10%','vertical-align':'top'}" ></p-column>
-        <p-column field="empresa" header="Empresa" [filter]="true" ></p-column>
-        <p-column field="contato" header="Contato" [filter]="true"></p-column>
-        <p-column field="email"   header="Email" [filter]="true"></p-column>
+        <p-column field="nomeEmpresa" header="Empresa" [filter]="true" ></p-column>
+        <p-column field="nomeContato" header="Contato" [filter]="true"></p-column>
+        <p-column field="emailContato"   header="Email" [filter]="true"></p-column>
         <p-column  header="Situação" [style]="{'width':'10%','vertical-align':'top'}">
           <ng-template pTemplate="body" let-col let-eps="rowData">
-
-        <div *ngIf="eps.situacao=='Ativa'">
-          <i class="fa fa-fw fa-check-circle-o" style='font-size:17px;color:#28a745' title="Ativa">{{eps.situacao}}</i>
-        </div>
-
-        <div *ngIf="eps.situacao=='Inativa'">
-          <i class="fa fa-fw fa-check-circle-o" style='font-size:17px;color:#ce0000' title="Ativa">{{eps.situacao}}</i>
-        </div>
-
+          <i class="fa fa-fw fa-check-circle-o" [ngStyle]="changeStyle(eps.codigoSituacao)" title="Ativa">{{ eps.codigoSituacao==='A'?'Ativa':'Inativa' }}</i>
           </ng-template>
         </p-column>
         <p-column styleClass="col-acoes" header="Ações" [style]="{'width':'15%','vertical-align':'top'}" >
             <ng-template pTemplate="body" let-col let-eps="rowData">
-              <a pButton icon="fa fa-pencil" title="editar" href='eps/{{eps.codigo}}/edit'></a>&nbsp;
-              <a pButton icon="fa fa-pause" title="Inativar" href='eps/{{eps.codigo}}/inactive' value='Inativar'></a>&nbsp;
-               <a pButton icon="fa fa-play" title="Inativar" href='eps/{{eps.codigo}}/active' value='Ativar'></a>
+              <a pButton icon="fa fa-pencil" title="editar" routerLink='/eps/{{eps.codigo}}/edit'></a>&nbsp;
+              <a pButton icon="fa fa-pause" title="Inativar" routerLink='eps/{{eps.codigo}}/inactive' value='Inativar'></a>&nbsp;
+               <a pButton icon="fa fa-play" title="Inativar" routerLink='eps/{{eps.codigo}}/active' value='Ativar'></a>
             </ng-template>
         </p-column>
 

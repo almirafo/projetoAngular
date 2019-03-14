@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
 
-    if (this.shared.isLogged) {
+    if (this.shared.isLogged()) {
       console.log(this.shared.isLogged);
       return true;
     }
