@@ -1,0 +1,70 @@
+
+<div class="content-wrapper" style="margin-top: 30px;">
+    <form>
+
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Cadastrar EPS</li>
+           <a class="btn btn-primary ml-auto" href="eps"><<Voltar</a>
+        </ol>
+      </div>
+
+      <div class="container-fluid">
+        <label for="inputName">Nome da empresa</label>
+        <input type="name" class="form-control" id="inputName">
+      </div>
+
+      <div class="container-fluid">
+        <label for="inputNameContact">Nome do responsável para contato</label>
+        <input type="name" class="form-control" id="inputNameContact">
+      </div>
+
+      <div class="container-fluid">
+        <label for="inputPhoneContact">Telefone do responsável para contato</label>
+        <input type="name" class="form-control" id="inputPhoneContact">
+      </div>
+
+      <div class="container-fluid">
+        <label for="exampleInputEmail1">Email do responsável para contato</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@exemplo.com">
+      </div>
+
+      <div class="col-auto my-1 col-sm-2">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Situação</label>
+        <select class="custom-select mr-sm-2" id="lblSituacao" disabled>
+          <option value="1">Ativa</option>
+        </select>
+      </div>
+
+      <div class="container-fluid">
+        <label for="comment">Emails To...</label>
+        <div class="input-group">
+          <input type="email" class="form-control"  id="inputEmailTo"  placeholder='Digite um email e clique em "Adicionar"'>
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" id="btnAdicionarEmailTo">Adicionar</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="container-fluid mb-2">
+        <label for="comment">Emails Cc...</label>
+        <div class="input-group">
+            <input type="email" class="form-control"  id="inputEmailCc" value="" placeholder='Digite um email e clique em "Adicionar"'>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-primary" id="btnAdicionarEmailCc">Adicionar</button>
+            </div>
+          </div>
+      </div>
+
+      <div class="container-fluid form-row align-items-center">
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Gravar</button>
+        </div>
+      </div>
+
+    </form>
+
+</div>

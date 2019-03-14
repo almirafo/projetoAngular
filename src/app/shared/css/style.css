@@ -1,0 +1,25 @@
+div>a {
+    color: #999999;
+    height: 100%;
+    width: 100%;
+}
+
+div>a:hover {
+    color: #C2C2C2;
+}
+
+.item {
+    margin-bottom: 1%;
+    border-radius: 7px;
+    text-align: center;
+    background:#424455;
+    height: 100px;
+    padding-top: 15px
+}
+
+
+.menu {
+    display: block;
+    clear: both;
+}
+

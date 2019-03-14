@@ -1,0 +1,23 @@
+.navbar {
+  padding: 10px 30px;
+  background: #e9ecef;
+  height: 80px;
+ margin-left: 0px;
+}
+
+.navbar-menu{
+  background: #e9ecef;
+  position: fixed;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  margin: 0px;
+  z-index: 998;
+  list-style: none;
+  padding: 10px;
+}
+
+.nav-item{
+  list-style: none;
+}

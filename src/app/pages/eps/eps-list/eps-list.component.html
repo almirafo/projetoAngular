@@ -1,0 +1,60 @@
+<div class="content-wrapper" style="margin-top: 30px;">
+
+    <form>
+
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Empresas Parceiras Santander</li>
+          <a class="btn btn-primary ml-auto" href='eps/new'>Adicionar</a>
+        </ol>
+      </div>
+    </form>
+
+
+      <p-dataTable #dt [value]="epsList" [paginator]="true" [rows]="3" class="table table-striped table-hover"  [responsive]="true">
+
+
+        <p-column field="codigo" header="Código" [style]="{'width':'10%','vertical-align':'top'}" ></p-column>
+        <p-column field="empresa" header="Empresa" [filter]="true" ></p-column>
+        <p-column field="contato" header="Contato" [filter]="true"></p-column>
+        <p-column field="email"   header="Email" [filter]="true"></p-column>
+        <p-column  header="Situação" [style]="{'width':'10%','vertical-align':'top'}">
+          <ng-template pTemplate="body" let-col let-eps="rowData">
+
+        <div *ngIf="eps.situacao=='Ativa'">
+          <i class="fa fa-fw fa-check-circle-o" style='font-size:17px;color:#28a745' title="Ativa">{{eps.situacao}}</i>
+        </div>
+
+        <div *ngIf="eps.situacao=='Inativa'">
+          <i class="fa fa-fw fa-check-circle-o" style='font-size:17px;color:#ce0000' title="Ativa">{{eps.situacao}}</i>
+        </div>
+
+          </ng-template>
+        </p-column>
+        <p-column styleClass="col-acoes" header="Ações" [style]="{'width':'15%','vertical-align':'top'}" >
+            <ng-template pTemplate="body" let-col let-eps="rowData">
+              <a pButton icon="fa fa-pencil" title="editar" href='eps/{{eps.codigo}}/edit'></a>&nbsp;
+              <a pButton icon="fa fa-pause" title="Inativar" href='eps/{{eps.codigo}}/inactive' value='Inativar'></a>&nbsp;
+               <a pButton icon="fa fa-play" title="Inativar" href='eps/{{eps.codigo}}/active' value='Ativar'></a>
+            </ng-template>
+        </p-column>
+
+      </p-dataTable>
+
+
+
+
+
+      <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <a class="navbar-brand" href="https://www.santander.com.br/" style="padding-top: 0px;">
+            <img src="assets/img/newlogo.png" style="with:100px; height:30px" >
+          </a>
+        </div>
+      </div>
+    </footer>
+
+
+  </div>

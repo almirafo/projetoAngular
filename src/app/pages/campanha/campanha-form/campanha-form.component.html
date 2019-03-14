@@ -1,0 +1,103 @@
+<div class="content-wrapper" style="margin-top: 30px;">
+
+
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Cadastrar Campanha</li>
+           <a class="btn btn-primary ml-auto" href="campanha"><<Voltar</a>
+        </ol>
+      </div>
+      <form>
+
+       <div class="container-fluid form-row align-items-center">
+        <div class="col-auto my-1 col-sm-2">
+          <label for="inputName">Código</label>
+          <input type="name" class="form-control" id="inputName">
+        </div>
+
+        <div class="col-auto my-1 col-sm-8">
+          <label for="inputDescricao">Descrição</label>
+          <input type="name" class="form-control" id="inputDescricao">
+        </div>
+
+
+          <div class="col-auto my-1 col-sm-2">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Situação</label>
+            <select class="custom-select mr-sm-2" id="lblSituacao">
+              <option value="1">Ativa</option>
+              <option value="2">Implantação</option>
+              <option value="3">Inativa</option>
+            </select>
+          </div>
+
+
+        <div class="col-auto my-1 col-sm-3">
+          <label for="inputDataInicio">Data início:</label>
+          <input type="date" name='inputDataInicio' class="form-control" id="inputDataInicio">
+        </div>
+
+        <div class="col-auto my-1 col-sm-3">
+          <label for="inputDataFimApuracao">Data fim:</label>
+          <input type="date" name='inputDataFimApuracao' class="form-control" id="inputDataFim">
+        </div>
+
+
+        <div class="col-auto my-1 col-sm-3">
+          <label for="inputDataInicioApuracao">Data início apuração:</label>
+          <input type="date" name='inputDataInicioApuracao' class="form-control" id="inputDataInicioApuracao">
+        </div>
+
+        <div class="col-auto my-1 col-sm-3">
+          <label for="inputDataFimApuracao">Data fim apuração:</label>
+          <input type="date" name='inputDataFimApuracao' class="form-control" id="inputDataFimApuracao">
+        </div>
+</div>
+      <p-pickList [source]="sourceEmpresas" [target]="targetEmpresas" sourceHeader="Empresas"
+        pTooltip="Grupos de empresas" tooltipPosition="right" filterBy="name"
+
+        targetHeader="Empresas selecionada *" [responsive]="true" dragdrop="true"
+        dragdropScope="todosGrupos">
+        <ng-template let-grupo pTemplate="item">
+        <div class="ui-helper-clearfix">{{grupo.name}}</div>
+        </ng-template>
+      </p-pickList>
+
+
+
+      <div class="container-fluid">
+        <label for="validationCustom01">Selecione o arquivo:</label>
+        <div class="col-auto my-1 col-sm-20">
+          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+          <label class="custom-file-label" for="validatedCustomFile">arquivo.txt</label>
+          <div class="invalid-feedback">Arquivo inválido</div>
+        </div>
+      </div>
+
+      <div class="container-fluid form-row align-items-center">
+          <div class="col-auto my-1 col-sm-2">
+              <label class="mr-sm-2" for="inlineFormCustomSelect">Layout</label>
+              <select class="custom-select mr-sm-2" id="lblLayout">
+                <option value="1" selected>5037</option>
+              </select>
+          </div>
+      </div>
+
+
+      <div class="container-fluid form-row align-items-center">
+        <div class="col-auto my-1 col-sm-5">
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Importar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Lista de arquivos de campanhas</li>
+        </ol>
+      </div>
+      </form>
+
+</div>

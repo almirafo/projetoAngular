@@ -1,0 +1,102 @@
+
+<nav class="navbar">
+
+
+
+
+  <div class="col-sm-2">
+    <i class="fa fa-bars float-left" (click)="showMenu = !showMenu"></i> &nbsp;
+    <img src="assets/img/newlogo.png" style="with:100px; height:30px" >
+  </div>
+
+  <div class="col-sm-7 text-left">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="col-sm-1 text-right">
+        <a  class="fa fa-fw fa-sign-out float-right " data-toggle="modal" data-target="#sairModal" style="color:#ce0000">Sair</a>
+   </div>
+
+
+
+
+<ul class = "navbar-menu" [hidden] ="!showMenu">
+ <li>{{userName}}</li>
+ <hr/>
+ <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+    <a class="nav-link" href="receberArquivo.html">
+      <i class="fa fa-cloud-download"></i>
+      <span class="nav-link-text">Receber arquivo</span>
+    </a>
+  </li>
+  <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+    <a class="nav-link" href="enviarArquivo.html">
+      <i class="fa fa-cloud-upload"></i>
+      <span class="nav-link-text">Enviar arquivo</span>
+    </a>
+  </li>
+
+  <li class="nav-item" data-toggle="tooltip" data-placement="right">
+  <a href="#historicoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+      <i class="fa fa-tasks"></i>
+      <span class="nav-link-text">Histórico</span>
+    </a>
+
+    <ul class="sidenav-second-level collapse" id="historicoSubmenu">
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+        <a class="nav-link" href="historicoTransferencia.html">
+          <i class="fa fa-download"></i>
+          <span class="nav-link-text">Transferencia</span>
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+        <a class="nav-link" href="historicoCliente.html">
+          <i class="fa fa-user"></i>
+          <span class="nav-link-text">Cliente No Contact</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+<a href="#gestaoSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+    <i class="fa fa-tasks"></i>
+    <span class="nav-link-text">Gestão</span>
+  </a>
+
+  <ul class="sidenav-second-level collapse" id="gestaoSubmenu">
+
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+      <a class="nav-link" href='eps' >
+        <i class="fa fa-download"></i>
+        <span class="nav-link-text"  >EPS</span>
+      </a>
+    </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+      <a class="nav-link" href="historicoCliente.html">
+        <i class="fa fa-user"></i>
+        <span class="nav-link-text">Usuário</span>
+      </a>
+    </li>
+
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+      <a class="nav-link" href="historicoCliente.html">
+        <i class="fa fa-user"></i>
+        <span class="nav-link-text">Grupos de Email</span>
+      </a>
+    </li>
+
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" >
+      <a class="nav-link" href="campanha">
+        <i class="fa fa-user"></i>
+        <span class="nav-link-text">Campanha</span>
+      </a>
+    </li>
+
+  </ul>
+</li>
+
+</ul>
+
+</nav>
+
