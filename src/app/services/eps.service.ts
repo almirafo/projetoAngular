@@ -5,7 +5,9 @@ import { map, catchError} from 'rxjs/operators';
 import { Eps } from '../model/eps.model';
 import { Observable, throwError } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class EpsService {
 
   private apiPath = 'api/eps';
@@ -23,7 +25,7 @@ export class EpsService {
   }
 
   list(): Observable<Eps[]> {
-    console.log('fazendo list');
+
     return this.http.get(this.apiPath).pipe(
       catchError(this.handleError),
       map(this.jsonDataToEPSs)
@@ -32,8 +34,13 @@ export class EpsService {
 
   }
 
-  getAll(): Observable<Eps[]> {
-    return this.http.get<[Eps]>(this.apiPath);
+  getById(id: string ): Observable<Eps> {
+    const url = `${this.apiPath}/${id}`;
+    return this.http.get(url).pipe(
+      catchError(this.handleError),
+      map(this.jsonDataToEPS)
+      );
+
   }
 
   private jsonDataToEPSs(jsonData: any[] ) {

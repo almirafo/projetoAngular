@@ -14,8 +14,20 @@ export class InMemoryDatabase implements InMemoryDbService {
 
 
     const eps: Eps[] = [
-      {id: '21', nomeEmpresa: 'TesteMethodSave', nomeContato: 'TesteMethodSave',
-      telefoneContato: '12345678', emailContato: 'teste@', codigoSituacao: 'A', usuarioUltAlter: '1'} as unknown as Eps
+      {id: '21', nomeEmpresa: 'ACE', nomeContato: 'Arian Augusto Pinho',
+      telefoneContato: '12345678', emailContato: 'arian.pinho@acegroup.com', codigoSituacao: 'A', usuarioUltAlter: '1'} ,
+      {id: '22', nomeEmpresa: 'Acxion', nomeContato: 'Ricardo Rego',
+      telefoneContato: '12345678', emailContato: ' 	ricardo@rego@acxiom.com', codigoSituacao: 'A', usuarioUltAlter: '1'} ,
+      {id: '23', nomeEmpresa: 'Call Link', nomeContato: 'Rodrigo S. Garcia',
+      telefoneContato: '12345678', emailContato: 'garcia@calllink.com.br', codigoSituacao: 'I', usuarioUltAlter: '1'} ,
+      {id: '24', nomeEmpresa: 'Contax', nomeContato: 'Dyego Cavalcante',
+      telefoneContato: '12345678', emailContato: 'dyego.silva@todo.com.br', codigoSituacao: 'A', usuarioUltAlter: '1'} ,
+      {id: '25', nomeEmpresa: 'Flex', nomeContato: 'Bruno Augusto Pinho',
+      telefoneContato: '12345678', emailContato: 'bruno@flex.com', codigoSituacao: 'I', usuarioUltAlter: '1'} ,
+      {id: '26', nomeEmpresa: 'Explorer', nomeContato: ' 	Carlos Augusto Pinho',
+      telefoneContato: '12345678', emailContato: 'carlos@explorer.com', codigoSituacao: 'A', usuarioUltAlter: '1'} ,
+      {id: '27', nomeEmpresa: 'GetNet', nomeContato: 'cristiano@getnet.com',
+      telefoneContato: '12345678', emailContato: 'eliane.souza@tivit.com.br', codigoSituacao: 'I', usuarioUltAlter: '1'}
   ];
 
 
