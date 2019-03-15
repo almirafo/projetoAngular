@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { map, catchError, flatMap } from 'rxjs/operators';
+
+import { map, catchError} from 'rxjs/operators';
 import { Eps } from '../model/eps.model';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class EpsService {
 
-  private apiPath = 'api/epsis';
-  constructor( private http: HttpClient) { }
+  private apiPath = 'api/eps';
+  constructor( private http: HttpClient) {
+    console.log('iniciou EpsService');
+
+   }
 
   create(eps: Eps): Observable<Eps> {
     return this.http.post(this.apiPath, eps).pipe(
@@ -28,6 +32,9 @@ export class EpsService {
 
   }
 
+  getAll(): Observable<Eps[]> {
+    return this.http.get<[Eps]>(this.apiPath);
+  }
 
   private jsonDataToEPSs(jsonData: any[] ) {
     const epss: Eps[] = [];

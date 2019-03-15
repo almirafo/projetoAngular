@@ -6,8 +6,8 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-  {path: 'eps' , loadChildren: './pages/eps/eps.module#EpsModule', canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent},
+  {path: 'eps' , loadChildren: './pages/eps/eps.module#EpsModule'},
   {path: 'campanha' , loadChildren: './pages/campanha/campanha.module#CampanhaModule'},
   {path: 'login', loadChildren: './pages/login/login.module#LoginModule'}
 ];

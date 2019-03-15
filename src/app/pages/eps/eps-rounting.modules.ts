@@ -7,9 +7,9 @@ import { EpsFormComponent } from './eps-form/eps-form.component';
 
 
 const routes: Routes = [
-  {path: '', component: EpsListComponent, canActivate: [ AuthGuard ]},
-  {path: 'new', component: EpsFormComponent, canActivate: [ AuthGuard ]},
-  {path: ':id/edit', component: EpsFormComponent, canActivate: [ AuthGuard ]},
+  {path: '', component: EpsListComponent},
+  {path: 'new', component: EpsFormComponent},
+  {path: ':id/edit', component: EpsFormComponent},
 
 ];
 

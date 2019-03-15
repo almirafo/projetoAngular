@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
     this.shared.showTemplate.subscribe(
       show => { this.showTemplate = show;
                 if (this.showTemplate) {
-                  this.userName = this.shared.user.id;
+                  this.userName = this.shared.user.name;
                 }
                }
     );

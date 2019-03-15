@@ -14,14 +14,13 @@ export class EpsListComponent implements OnInit {
   corAtivo = { color : '#28a745'};
   corInativo = {color: '#ce0000'};
 
-  epsList: Eps = [ ];
+  epsList: Eps [ ];
 
   constructor(private epsService: EpsService) { }
 
   ngOnInit() {
     this.epsService.list().subscribe(
-      epsList => this.epsList = epsList,
-      erro => alert(erro)
+      data => this.epsList = data
     );
 
   }

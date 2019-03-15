@@ -13,51 +13,15 @@ export class InMemoryDatabase implements InMemoryDbService {
 
 
 
-    const epsis: Eps[] = [
-      {id: '21',
-       nomeEmpresa: 'TesteMethodSave',
-       nomeContato: 'TesteMethodSave',
-       telefoneContato: '12345678',
-       emailContato: 'teste@',
-       codigoSituacao: 'A',
-       usuarioUltAlter: '1'
-        },
-
-        {id: '22',
-        nomeEmpresa: 'TesteMethodSave',
-        nomeContato: 'TesteMethodSave',
-        telefoneContato: '12345678',
-        emailContato: 'teste@',
-        codigoSituacao: 'A',
-        usuarioUltAlter: '1'
-         },
-
-         {id: '23',
-         nomeEmpresa: 'TesteMethodSave',
-         nomeContato: 'TesteMethodSave',
-         telefoneContato: '12345678',
-         emailContato: 'teste@',
-         codigoSituacao: 'I',
-         usuarioUltAlter: '1'
-
-          },
-
-          {id: '24',
-          nomeEmpresa: 'TesteMethodSave',
-          nomeContato: 'TesteMethodSave',
-          telefoneContato: '12345678',
-          emailContato: 'teste@',
-          codigoSituacao: 'I',
-          usuarioUltAlter: '1'
-
-           }
-
+    const eps: Eps[] = [
+      {id: '21', nomeEmpresa: 'TesteMethodSave', nomeContato: 'TesteMethodSave',
+      telefoneContato: '12345678', emailContato: 'teste@', codigoSituacao: 'A', usuarioUltAlter: '1'} as unknown as Eps
   ];
 
 
 
 
-    return { users, epsis };
+    return { eps, users };
   }
 
 }

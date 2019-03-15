@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  showTemplate = false;
+  showTemplate = true;
   public shared: SharedService;
   userName: string = '';
 
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.shared.showTemplate.subscribe(
       show => { this.showTemplate = show;
                 if (this.showTemplate) {
-                  this.userName = this.shared.user.id;
+                  this.userName = this.shared.user.name;
                 }
                }
     );
