@@ -1,5 +1,7 @@
 export class Eps {
-    constructor(
+
+
+   constructor(
         id?: string,
         nomeEmpresa?: string,
         nomeContato?: string,
@@ -7,5 +9,7 @@ export class Eps {
         emailContato?: string,
         usuarioUltAlter?: string
 
-    ) {}
+    ) {
+
+    }
 }

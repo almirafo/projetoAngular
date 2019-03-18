@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { EpsRountingModule } from './eps-rounting.modules';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,8 @@ import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 import { ButtonModule } from 'primeng/components/button/button';
 import { DataTableModule } from 'primeng/components/datatable/datatable';
 import {PaginatorModule} from 'primeng/components/paginator/paginator';
+
+
 @NgModule({
   declarations: [EpsListComponent, EpsFormComponent],
   imports: [
@@ -18,7 +21,8 @@ import {PaginatorModule} from 'primeng/components/paginator/paginator';
     DataTableModule,
     PaginatorModule,
     CommonModule,
-    EpsRountingModule
+    EpsRountingModule,
+    ReactiveFormsModule
   ]
 })
 export class EpsModule { }

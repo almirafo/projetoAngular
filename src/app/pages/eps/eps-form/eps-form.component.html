@@ -1,6 +1,6 @@
 
 <div class="content-wrapper" style="margin-top: 30px;">
-    <form>
+    <form [formGroup] = "epsForm">
 
       <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -32,7 +32,7 @@
 
       <div class="col-auto my-1 col-sm-2">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Situação</label>
-        <select class="custom-select mr-sm-2" id="lblSituacao" disabled>
+        <select class="custom-select mr-sm-2" id="lblSituacao" {{disabled}}>
           <option value="1">Ativa</option>
         </select>
       </div>
