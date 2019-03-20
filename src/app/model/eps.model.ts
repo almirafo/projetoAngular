@@ -1,15 +1,20 @@
 export class Eps {
 
-
-   constructor(
-        id?: string,
+        id: number;
+        nomeEmpresa: string;
+        nomeContato: string;
+        telefoneContato: string;
+        emailContato: string;
+        codigoSituacao: string;
+        usuarioUltAlter: string;
+  constructor(
+        id?: number,
         nomeEmpresa?: string,
         nomeContato?: string,
         telefoneContato?: string,
         emailContato?: string,
+        codigoSituacao?: string,
         usuarioUltAlter?: string
 
-    ) {
-
-    }
+    ) {  }
 }

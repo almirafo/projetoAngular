@@ -1,67 +1,112 @@
 
 <div class="content-wrapper" style="margin-top: 30px;">
-    <form [formGroup] = "epsForm">
+    <form [formGroup]="epsForm" (submit)="createEps()">
 
       <div class="container-fluid">
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-          <li class="breadcrumb-item active">Cadastrar EPS</li>
+          <li class="breadcrumb-item active">{{ pageTitle }}</li>
            <a class="btn btn-primary ml-auto" routerLink="/eps"><<Voltar</a>
         </ol>
       </div>
 
       <div class="container-fluid">
-        <label for="inputName">Nome da empresa</label>
-        <input type="name" class="form-control" id="inputName">
+        <label for="nomeEmpresa">Nome da empresa</label>
+        <input type="name" class="form-control" id="nomeEmpresa" formControlName="nomeEmpresa">
       </div>
 
       <div class="container-fluid">
-        <label for="inputNameContact">Nome do responsável para contato</label>
-        <input type="name" class="form-control" id="inputNameContact">
+        <label for="nomeContato">Nome do responsável para contato</label>
+        <input type="name" class="form-control" id="nomeContato"  formControlName="nomeContato">
       </div>
 
       <div class="container-fluid">
-        <label for="inputPhoneContact">Telefone do responsável para contato</label>
-        <input type="name" class="form-control" id="inputPhoneContact">
+        <label for="telefoneContato">Telefone do responsável para contato</label>
+        <input type="name" class="form-control" id="telefoneContato" formControlName="telefoneContato">
       </div>
 
       <div class="container-fluid">
-        <label for="exampleInputEmail1">Email do responsável para contato</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email@exemplo.com">
+        <label for="emailContato">Email do responsável para contato</label>
+        <input type="email" class="form-control" id="emailContato"  formControlName="emailContato"
+         aria-describedby="emailHelp" placeholder="email@exemplo.com">
+        <div *ngIf="input.invalid && (input.dirty || input.touched)" class="text-danger">formato email inválido</div>
       </div>
+
+
 
       <div class="col-auto my-1 col-sm-2">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Situação</label>
-        <select class="custom-select mr-sm-2" id="lblSituacao" {{disabled}}>
-          <option value="1">Ativa</option>
+        <select class="custom-select mr-sm-2" id="codigoSituacao" [disabled]="isDisabled" formControlName="codigoSituacao" >
+          <option value="A">Ativa</option>
+           <option value="I">Inativa</option>
         </select>
       </div>
 
       <div class="container-fluid">
         <label for="comment">Emails To...</label>
-        <div class="input-group">
-          <input type="email" class="form-control"  id="inputEmailTo"  placeholder='Digite um email e clique em "Adicionar"'>
+        <div class="input-group mb-2" >
+          <input type="email" aria-describedby="emailHelp"  class="form-control"  id="emailTO" formControlName="emailTO" placeholder='Digite um email e clique em "Adicionar"'/>
+
           <div class="input-group-append">
-            <button type="button" class="btn btn-primary" id="btnAdicionarEmailTo">Adicionar</button>
+            <button type="button" class="btn btn-primary" (click) = "addEmail('to')" id="btnAdicionarEmailTo">Adicionar</button>
           </div>
         </div>
+          <div *ngIf="! emailTOisValid">
+            Email TO not valid.
+            </div>
+      <table class="table-striped dtbListarEmails" id="dtbListarEmailsCc" width="100%" >
+          <thead class="thead-dark">
+            <tr>
+              <th width="80%">Email</th>
+              <th class="actions" width="15%">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor ="let item of emailsTO">
+          <td> {{item}} </td>
+          <td> <button type="button" class="btn btn-danger" (click) = "removeEmailTO(item)"id="btnExcluirEmailTo">Excluir</button></td>
+          </tr>
+
+          </tbody>
+        </table>
 
       </div>
 
-
+      <hr/>
       <div class="container-fluid mb-2">
         <label for="comment">Emails Cc...</label>
-        <div class="input-group">
-            <input type="email" class="form-control"  id="inputEmailCc" value="" placeholder='Digite um email e clique em "Adicionar"'>
+        <div class="input-group mb-2">
+            <input type="email" class="form-control"  formControlName="emailCC" id="inputEmailCc" value="" placeholder='Digite um email e clique em "Adicionar"'>
+
             <div class="input-group-append">
-              <button type="button" class="btn btn-primary" id="btnAdicionarEmailCc">Adicionar</button>
+              <button type="button" class="btn btn-primary"  (click) = "addEmail('cc')" id="btnAdicionarEmailCc">Adicionar</button>
             </div>
           </div>
-      </div>
+          <div *ngIf="! emailCCisValid" class="text-danger">
+            Email CC not valid.
+          </div>
+          <table class="table-striped dtbListarEmails" id="dtbListarEmailsCc" width="100%" >
+          <thead class="thead-dark">
+            <tr>
+              <th width="80%">Email</th>
+              <th class="actions" width="15%">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor ="let item of emailsCC">
+          <td> {{item}} </td>
+          <td> <button type="button" class="btn btn-danger" (click) = "removeEmailCC(item)"id="btnExcluirEmailTo">Excluir</button></td>
+          </tr>
 
+          </tbody>
+        </table>
+
+
+      </div>
+      <hr/>
       <div class="container-fluid form-row align-items-center">
         <div class="form-group">
-          <button type="submit" class="btn btn-primary">Gravar</button>
+          <button [disabled]= "submittingForm" type="submit" class="btn btn-primary">Gravar</button>
         </div>
       </div>
 

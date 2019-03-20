@@ -27,8 +27,8 @@
         <p-column styleClass="col-acoes" header="Ações" [style]="{'width':'15%','vertical-align':'top'}" >
             <ng-template pTemplate="body" let-col let-eps="rowData">
               <a pButton icon="fa fa-pencil" title="editar" routerLink='/eps/{{eps.id}}/edit'></a>&nbsp;
-              <a pButton icon="fa fa-pause" title="Inativar" routerLink='eps/{{eps.id}}/inactive' value='Inativar'></a>&nbsp;
-               <a pButton icon="fa fa-play" title="Inativar" routerLink='eps/{{eps.id}}/active' value='Ativar'></a>
+              <a pButton icon="fa fa-pause" title="Inativar" (click) = "inactivate(eps.id)" value='Inativar'></a>&nbsp;
+               <a pButton icon="fa fa-play" title="Inativar" (click)='activate(eps.id)' value='Ativar'></a>
             </ng-template>
         </p-column>
 
